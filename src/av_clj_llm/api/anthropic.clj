@@ -1,5 +1,5 @@
 (ns av-clj-llm.api.anthropic
-  (:require [av-clj-llm.api.core :refer [ChatAPI]]
+  (:require [av-clj-llm.api.core :refer [ChatAPI get-chat-response]]
             [av-clj-llm.utils :as utils]
             [clj-http.client :as http]
             [cheshire.core :as json]))

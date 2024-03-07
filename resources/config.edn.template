@@ -1,4 +1,5 @@
 {:openai {:api-key "your_openai_api_key"
+          :organization "your_openai_organization_key"
           :model-engine "gpt-3.5-turbo"
           :max-tokens 2048
           :temperature 0.6

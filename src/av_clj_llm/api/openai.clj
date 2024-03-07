@@ -1,5 +1,5 @@
 (ns av-clj-llm.api.openai
-  (:require [av-clj-llm.api.core :refer [ChatAPI]]
+  (:require [av-clj-llm.api.core :refer [ChatAPI get-chat-response]]
             [av-clj-llm.utils :as utils]
             [clj-http.client :as http]
             [cheshire.core :as json]))
@@ -10,6 +10,7 @@
     (println "---\nSending prompt:" prompt "\n")
     (let [url "https://api.openai.com/v1/chat/completions"
           headers {"Content-Type" "application/json"
+                   "OpenAI-Organization" (:organization config)
                    "Authorization" (str "Bearer " (:api-key config))}
           body {:model (:model-engine config)
                 :messages (conj @messages {:role "user" :content prompt})
