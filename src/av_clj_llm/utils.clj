@@ -24,8 +24,17 @@
                            (exponential-backoff retry)
                            ::retry)
                          (throw (ex-info "API request failed after multiple attempts" {:cause e})))))]
-      (if (= ::retry response)
+      (cond
+        (= ::retry response)
         (recur (inc retry))
+
+        (= 429 (:status response))
+        (do
+          (println "Rate limit exceeded. Waiting for 1 minute before retrying...")
+          (Thread/sleep 60000)
+          (recur retry))
+
+        :else
         response))))
 
 (defn paginate-prompt [prompt max-tokens]
