@@ -1,4 +1,4 @@
-# ChatGPT Clojure
+# av-clj-llm
 
 A Clojure-based chatbot that integrates with different AI APIs, including OpenAI and Anthropic.
 
@@ -12,7 +12,7 @@ A Clojure-based chatbot that integrates with different AI APIs, including OpenAI
 1. Clone the repository:
 
    ```
-   git clone https://github.com/your-username/av-clj-llm.git
+   git clone https://github.com/araray/av-clj-llm.git
    ```
 
 2. Navigate to the project directory:
